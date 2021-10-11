@@ -1,0 +1,15 @@
+Realizzare schema di connessione per l'homework.
+
+Regola di instradamento per un pc (device) nel caso sia default stiamo assegnando un gateway.
+
+
+route add default gw address_gateway 
+
+
+Generalmente al gateway per convenzione si da l'indirizzo più basso.
+
+Ricordiamo che i router al momento del collegamento ad un dominio di collisione, contengono una route a tutti i dispositivi locali in quel dominio di collisione. Ossia hanno già le entry della tabella di route per i dispositivi che condividono quella stessa LAN 
+
+
+
+

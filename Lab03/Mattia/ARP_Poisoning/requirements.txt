@@ -1,0 +1,3 @@
+#Create virtual env to handle packages requirements
+#Look at "links" man page on a docker container.
+scapy

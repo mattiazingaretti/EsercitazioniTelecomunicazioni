@@ -1,2 +1,0 @@
-ifconfig eth0 10.0.2.130 netmask 255.255.255.128 up
-route add default gw 10.0.2.129

@@ -1,0 +1,6 @@
+ifconfig eth0 198.10.21.0 netmask 255.255.255.128
+ifconfig eth1 198.10.21.228 netmask 255.255.255.252
+
+route add -net 198.10.21.244 netmask 255.255.255.252 gw 198.10.21.228 dev eth1
+route add -net 198.10.21.232 netmask 255.255.255.252 gw 198.10.21.228 dev eth1
+route add -net 198.10.21.224 netmask 255.255.255.252 gw 198.10.21.228 dev eth1

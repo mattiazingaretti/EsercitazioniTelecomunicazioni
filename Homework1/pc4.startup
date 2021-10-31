@@ -1,2 +1,0 @@
-ifconfig eth0 198.10.98.129 netmask 255.255.255.128
-route add default gw 198.10.98.130

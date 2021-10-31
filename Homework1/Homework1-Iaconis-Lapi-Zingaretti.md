@@ -26,6 +26,8 @@ Gruppo Iaconis, Lapi, Zingaretti
    Per raggiungere l'obiettivo di minimizzare il numero di regole di instradamento nel router r1 abbiamo impiegato i blocchi .99 e .98 sul branch di sinistra (da r2 a seguire) in quanto condividono il 23° bit a 1 e ciò consente di ridurre di uno il numero di regole di instradamento su r1, scrivendo una sola regola con netmask di destinazione a 23 bit. La stessa logica è stata applicata sul branch di destra (da r3 a seguire) in quanto i blocchi .96 e .97 condividono il 23° bit a 0. 
    Inoltre abbiamo effettuato un assegnazione contigua di indirizzi alle varie LAN in modo da poter (nei limiti del possibile) riutilizzare o rendere disponibili gli indirizzi al variare della configurazione proposta lasciando meno "buchi" possibili.
 
+   [TODO: ADD BLOCKS OF ADDRESSES AND TREE DIVISION OF SUBNETS]
+   
 2. Le tabelle sono l'output del comando qui indicato, eseguito nei rispettivi router.
 
    ```shell

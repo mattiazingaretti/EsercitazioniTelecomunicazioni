@@ -1,0 +1,3 @@
+Address                  HWtype  HWaddress           Flags Mask            Iface
+198.10.99.1              ether   ca:eb:87:5d:ba:57   C                     eth0
+198.10.98.35             ether   2e:22:fc:5e:25:51   C                     eth1

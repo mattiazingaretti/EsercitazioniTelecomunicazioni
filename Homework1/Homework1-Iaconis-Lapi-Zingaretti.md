@@ -6,8 +6,8 @@ Homework 1 (29/10/2021)
 
 Gruppo Iaconis, Lapi, Zingaretti
 
-1. Si dispone di un'insieme di indirizzi con netmask a 22 bit, dato che un blocco di indirizzi di classe C ha netmask a 24 bit abbiamo impiegato questi due bit di differenza (bit di supernetting per l'appunto) per individuare i 4 blocchi di indirizzi di classe C corrispondenti  [198.10.96.X/24 , 198.10.97.X/24 ,  198.10.98.X/24 , 198.10.99.X/24 ] . Ottenuti rispettivamente impostando i penultimi due bit del 3° ottetto con le configurazioni [00 , 01, 10 , 11].
-   Con l'idea di effettuare SuperNetting su questi blocchi se necessario, abbiamo realizzato l'assegnazione dei prefissi alle varie LAN applicando la tecnica di subnetting. 
+1. Si dispone di un'insieme di indirizzi con netmask a 22 bit, dato che un blocco di indirizzi di classe C ha netmask a 24 bit abbiamo impiegato questi due bit di differenza (bit di supernetting ) per individuare i 4 blocchi di indirizzi di classe C corrispondenti  [198.10.96.X/24 , 198.10.97.X/24 ,  198.10.98.X/24 , 198.10.99.X/24 ] . Ottenuti rispettivamente impostando i penultimi due bit del 3° ottetto con le configurazioni [00 , 01, 10 , 11].
+   Con l'idea di effettuare SuperNetting su questi blocchi, se necessario, abbiamo realizzato l'assegnazione dei prefissi alle varie LAN applicando la tecnica di subnetting. 
 
    | LAN                    |    Prefix     |     NetMask     | BroadCast Address | #Indirizzi Non utilizzati |
    | ---------------------- | :-----------: | :-------------: | ----------------- | ------------------------- |
@@ -24,7 +24,7 @@ Gruppo Iaconis, Lapi, Zingaretti
    | LAN M (Emula Internet) | 198.10.100.0  | 255.255.255.252 |                   |                           |
 
    Per raggiungere l'obiettivo di minimizzare il numero di regole di instradamento nel router r1 abbiamo impiegato i blocchi .99 e .98 sul branch di sinistra (da r2 a seguire) in quanto condividono il 23° bit a 1 e ciò consente di ridurre di uno il numero di regole di instradamento su r1, scrivendo una sola regola con netmask di destinazione a 23 bit. La stessa logica è stata applicata sul branch di destra (da r3 a seguire) in quanto i blocchi .96 e .97 condividono il 23° bit a 0. 
-   Inoltre abbiamo effettuato un assegnazione contigua di indirizzi alle varie LAN in modo da poter (nei limiti del possibile) riutilizzare o rendere disponibili gli indirizzi al variare della configurazione proposta lasciando meno "buchi" possibili.
+   Inoltre abbiamo effettuato un'assegnazione contigua di indirizzi alle varie LAN in modo da poter (nei limiti del possibile) riutilizzare o rendere disponibili gli indirizzi al variare della configurazione proposta lasciando meno "buchi" possibili.
 
    [TODO: ADD BLOCKS OF ADDRESSES AND TREE DIVISION OF SUBNETS]
    

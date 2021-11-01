@@ -1,34 +1,49 @@
-Telecomunicazioni – A.A. 2021/22
 
-Ing. Informatica e Automatica
 
-Homework 1 (29/10/2021)
+<div align="center">Telecomunicazioni – A.A. 2021/22</div>
+<div align="center">Ing. Informatica e Automatica</div>
+<div align="center">Homework 1 (29/10/2021)</div>
+  <div align="center">Gruppo Iaconis, Lapi, Zingaretti</div>
 
-Gruppo Iaconis, Lapi, Zingaretti
-
-1. Si dispone di un'insieme di indirizzi con netmask a 22 bit, dato che un blocco di indirizzi di classe C ha netmask a 24 bit abbiamo impiegato questi due bit di differenza (bit di supernetting ) per individuare i 4 blocchi di indirizzi di classe C corrispondenti  [198.10.96.X/24 , 198.10.97.X/24 ,  198.10.98.X/24 , 198.10.99.X/24 ] . Ottenuti rispettivamente impostando i penultimi due bit del 3° ottetto con le configurazioni [00 , 01, 10 , 11].
-   Con l'idea di effettuare SuperNetting su questi blocchi, se necessario, abbiamo realizzato l'assegnazione dei prefissi alle varie LAN applicando la tecnica di subnetting. 
-
-   | LAN                    |    Prefix     |     NetMask     | BroadCast Address | #Indirizzi Non utilizzati |
-   | ---------------------- | :-----------: | :-------------: | ----------------- | ------------------------- |
-   | LAN A                  |  198.10.99.0  |  255.255.255.0  | 198.10.99.255     |                           |
-   | LAN B                  | 198.10.98.64  | 255.255.255.192 | 198.10.98.128     |                           |
-   | LAN C                  | 198.10.98.128 | 255.255.255.128 | 198.10.98.255     |                           |
-   | LAN D                  |  198.10.97.0  |  255.255.255.0  | 198.10.96.255     |                           |
-   | LAN E                  | 198.10.96.192 | 255.255.255.224 | 198.10.97.224     |                           |
-   | LAN F                  | 198.10.96.224 | 255.255.255.240 | 198.10.97.240     |                           |
-   | LAN G                  | 198.10.98.32  | 255.255.255.224 | 198.10.98.64      |                           |
-   | LAN H                  |  198.10.98.0  | 255.255.255.252 | 198.10.98.3       |                           |
-   | LAN I                  | 198.10.96.248 | 255.255.255.252 | 198.10.97.252     |                           |
-   | LAN L                  | 198.10.96.240 | 255.255.255.252 | 198.10.97.244     |                           |
-   | LAN M (Emula Internet) | 198.10.100.0  | 255.255.255.252 | 198.10.100.4ƒ     |                           |
-
-   Per raggiungere l'obiettivo di minimizzare il numero di regole di instradamento nel router r1 abbiamo impiegato i blocchi .99 e .98 sul branch di sinistra (da r2 a seguire) in quanto condividono il 23° bit a 1 e ciò consente di ridurre di uno il numero di regole di instradamento su r1, scrivendo una sola regola con netmask di destinazione a 23 bit. La stessa logica è stata applicata sul branch di destra (da r3 a seguire) in quanto i blocchi .96 e .97 condividono il 23° bit a 0. 
-   Inoltre abbiamo effettuato un'assegnazione contigua di indirizzi alle varie LAN in modo da poter (nei limiti del possibile) riutilizzare o rendere disponibili gli indirizzi al variare della configurazione proposta lasciando meno "buchi" possibili.
-
-   **[TODO: ADD BLOCKS OF ADDRESSES AND TREE DIVISION OF SUBNETS]**
+1. Si dispone di un insieme di indirizzi con netmask a 22 bit; sapendo che un blocco di indirizzi di classe C ha netmask a 24 bit abbiamo impiegato i due bit rimanenti (bit di supernetting) per individuare i 4 blocchi di indirizzi di classe C corrispondenti [198.10.96.X/24 , 198.10.97.X/24 , 198.10.98.X/24 , 198.10.99.X/24 ], ottenuti rispettivamente impostando i penultimi due bit del 3° ottetto con le configurazioni [00 , 01, 10 , 11].
+   Con l'idea di effettuare SuperNetting su questi blocchi abbiamo realizzato l'assegnazione dei prefissi alle varie LAN applicando la tecnica di subnetting. 
+   Il conteggio degli indirizzi non utilizzati non comprende gli indirizzi broadcast e il prefisso di rete.
    
-2. Le tabelle sono l'output del comando qui indicato, eseguito nei rispettivi router.
+   | LAN                    | Prefix        | NetMask         | BroadCast Address | #Indirizzi Non utilizzati |
+   | ---------------------- | ------------- | --------------- | ----------------- | ------------------------- |
+   | LAN A                  | 198.10.99.0   | 255.255.255.0   | 198.10.99.255     | 54                        |
+   | LAN B                  | 198.10.98.64  | 255.255.255.192 | 198.10.98.128     | 11                        |
+   | LAN C                  | 198.10.98.128 | 255.255.255.128 | 198.10.98.255     | 15                        |
+   | LAN D                  | 198.10.97.0   | 255.255.255.0   | 198.10.96.255     | 124                       |
+   | LAN E                  | 198.10.96.192 | 255.255.255.224 | 198.10.97.224     | 9                         |
+   | LAN F                  | 198.10.96.224 | 255.255.255.240 | 198.10.97.240     | 3                         |
+   | LAN G                  | 198.10.98.32  | 255.255.255.224 | 198.10.98.64      | 9                         |
+   | LAN H                  | 198.10.98.0   | 255.255.255.252 | 198.10.98.3       | 0                         |
+   | LAN I                  | 198.10.96.248 | 255.255.255.252 | 198.10.97.252     | 0                         |
+   | LAN L                  | 198.10.96.240 | 255.255.255.252 | 198.10.97.244     | 0                         |
+   | LAN M (Emula Internet) | 198.10.100.0  | 255.255.255.252 | 198.10.100.4      | 0                         |
+   
+   Per minimizzare il numero di regole di instradamento nel router r1 abbiamo impiegato i blocchi .99 e .98 sul branch di sinistra (da r2 a seguire) in quanto condividono il 23° bit a 1 e ciò consente di ridurre di uno il numero di regole di instradamento su r1, scrivendo una sola regola con netmask di destinazione a 23 bit. La stessa logica è stata applicata sul branch di destra (da r3 a seguire) in quanto i blocchi .96 e .97 condividono il 23° bit a 0. 
+   Inoltre abbiamo effettuato un'assegnazione di indirizzi contigui alle varie LAN in modo da poter, nei limiti del possibile, riutilizzare o rendere disponibili gli indirizzi al variare della configurazione proposta.
+   Avendo seguito questa strategia di indirizzamento statico, le regole risultanti su r1 sono le seguenti:
+   
+   ```bash
+   route add default gw 198.10.96.241
+   route add -net 198.10.98.0 netmask 255.255.254.0 gw 198.10.98.2 dev eth0
+   route add -net 198.10.96.0 netmask 255.255.254.0 gw 198.10.96.250 dev eth1
+   ```
+   
+   <img src="/Users/mattiazingaretti/Library/Application Support/typora-user-images/image-20211101204654591.png" alt="image-20211101204654591" style="zoom:25%;" />
+   
+   Visualizzazione grafica dei blocchi di classe C di indirizzi impiegati:
+   
+   <div align="center">
+   <img src="/Users/mattiazingaretti/Library/Application Support/typora-user-images/image-20211101205557201.png" alt="image-20211101205557201" style="zoom:20%;" align="center"/>
+   </div>
+   
+   
+   
+2. Otteniamo le seguenti tabelle eseguendo in ogni router il comando:
 
    ```shell
    $ route -n 
@@ -121,14 +136,13 @@ Gruppo Iaconis, Lapi, Zingaretti
      4   198.10.100.2  0.035ms  0.036ms  0.039ms
    ```
 
-   La regola di instradamento inserita nel router r5 è una regola di instradamento di default che vincola il traffico diretto verso la nostra LAN M a passare per l'interfaccia "eth1" del router r3.
+   La regola di instradamento inserita nel router r5 è una regola di default che vincola il traffico diretto verso la LAN M a passare per l'interfaccia eth1 del router r3.
 
    ```bash
    route add default gw 198.10.96.194 dev eth2 #for external  ip's and internet
    ```
 
-
-
+   
 
 4. Consideriamo la seguente configurazione di rete di h1 e r2 ottenuta tramite il comando:
 
@@ -180,10 +194,11 @@ Gruppo Iaconis, Lapi, Zingaretti
    $ tcpdump -i eth0 -w r2Cap.pcap
    ```
 
-   Riportiamo quindi i pacchetti catturati da Wireshark.
+   Riportiamo quindi i pacchetti catturati da Wireshark:
 
-   ![
-   ](/Users/mattiazingaretti/Library/Application Support/typora-user-images/Screenshot 2021-11-01 at 12.01.56.png)
+   <div align="center">
+     <img src="/Users/mattiazingaretti/Desktop/Screenshot 2021-11-01 at 12.01.56.png" alt="
+   " style="zoom:20%;" /></div>
 
    In seguito alla comunicazione le ARP table di h1 e r2 risultano così configurate:
 
@@ -202,11 +217,38 @@ Gruppo Iaconis, Lapi, Zingaretti
    198.10.98.35             ether   c2:2d:3b:3b:da:2a   C                     eth1
    ```
 
-   Come si evince dal pacchetto numero 3, l'host h1 (con indirizzo MAC aa:bb:cc:dd:ee:0a ) invia in broadcast ,a livello 2, una ARP request per venire a conoscenza dell'indirizzo MAC del suo gateway (r2) che risponde in unicast con una ARP reply (pacchetto numero 4 sulla cattura di Wireshark ) contenente il suo indirizzo MAC ( aa:bb:cc:dd:ee:2d ).  Una volta terminata la procedura, la ARP table di h1 conterrà un nuovo record con IP di r2 sull'interfaccia eth0 e indirzzo MAc di r2. In questo modo r2 potrà indirizzare corretamente l'Echo request, secondo le sue regole di instradamento ,e consegnare il pacchetto a h2 che risponderà (dopo aver terminato se necessario la sua procedura ARP ) con una Echo reply.
+   Come si può osservare dal frame numero 3 della cattura di Wireshark, l'host h1 (con indirizzo MAC aa:bb:cc:dd:ee:0a ) invia in broadcast, a livello 2, una ARP request per ottenere l'indirizzo MAC del suo gateway (r2), il quale risponde in unicast con una ARP reply (frame numero 4 sulla cattura di Wireshark) contenente il suo indirizzo MAC ( aa:bb:cc:dd:ee:2d ). Una volta terminata la procedura, la ARP table di h1 conterrà un nuovo record con l'IP di r2 sull'interfaccia eth0 e l'indirizzo MAC di r2. In questo modo r2 potrà indirizzare correttamente l'Echo request seguendo le sue regole di instradamento e consegnare l'unità dati ad h2 che risponderà con una Echo reply dopo aver terminato, se necessario, la sua procedura ARP.
 
-5. 
+5. Per descrivere la gestione degli indirizzi MAC durante la comunicazione h1 - h2, mostreremo in che modo avvengono le procedure ARP tra i vari dispositivi coinvolti: 
+
+   1. Nella configurazione iniziale del percorso di rete le ARP tables di tutti i dispositivi sono vuote. Al momento dell'invio di un pacchetto dall'host h1 ad h2, h1 riconosce, dal prefisso dell'IP di destinazione, che questo appartiene ad un host al di fuori della sua LAN. Quindi invia in broadcast una ARP Request basandosi sull'IP che ottiene dalla regola di instradamento del suo default gateway. Il router r2 riconosce il suo IP nella ARP Request e risponde con il suo MAC address, che una volta ricevuto da h1 viene aggiunto alla ARP table di quest'ultimo. A questo punto avviene la trasmissione del pacchetto tramite l'interfaccia di uscita di h1 (definita nella sua Routing Table ma aggiunta anche in ARP Table) e la propagazione ad r2.
+   2. Lo scambio di ARP Request e ARP Reply viene ripetuto dai router r2 (che invia una ARP Request) e r4 (che invia una ARP Reply in unicast). r2 aggiorna la sua ARP table e la completa con l'interfaccia di uscita corrispondente al risultato del processo di Longest Prefix Matching tra l'IP di destinazione e i prefissi possibili presenti nella sua Routing Table. Il pacchetto viene propagato da r2 a r4.
+   3. La procedura di ARP viene ripetuta dal router r4 e dall'host h2. r4 aggiorna la sua ARP table e la completa con l'interfaccia di uscita corrispondente al risultato del processo di Longest Prefix Matching. Il pacchetto viene propagato da r4 a h2. 
+
+      <img src="/Users/mattiazingaretti/Library/Application Support/typora-user-images/image-20211101204840537.png" alt="image-20211101204840537" style="zoom:25%;" />
+
+   (Nelle tabelle in figura gli indirizzi MAC non sono specificati in quanto variano ad ogni riavvio del laboratorio Kathará.) 
+
+6. Il legame tra RTT e lunghezza del percorso è espresso dai seguenti grafici (Ascissa: numero di link attraversati; Ordinata: RTT in millisecondi).
+
+   | Legenda:                                                     | <img src="/Users/mattiazingaretti/Library/Application Support/typora-user-images/image-20211101201210447.png" alt="image-20211101201210447" style="zoom:50%;" /> |
+   | ------------------------------------------------------------ | ------------------------------------------------------------ |
+   | RTT medio su ping di 10 pacchetti:<img src="/Users/mattiazingaretti/Downloads/RTT size length/AVG.png" alt="AVG" style="zoom:33%;" /> | RTT minimo su ping di 10 pacchetti:<img src="/Users/mattiazingaretti/Downloads/RTT size length/MIN.png" alt="MIN" style="zoom:33%;" /> |
+   | RTT massimo su ping di 10 pacchetti:<img src="/Users/mattiazingaretti/Downloads/RTT size length/MAX.png" alt="MAX" style="zoom:33%;" /> | Stima della Deviazione Standard dell'RTT su ping di 10 pacchetti:<br />  <img src="/Users/mattiazingaretti/Downloads/RTT size length/DEVRTT.png" alt="DEVRTT" style="zoom:30%;" /> |
+
    
 
-   [TODO: add graph on OSI stack]
 
-6.
+   ​                         
+   
+
+   
+
+
+   
+
+
+   
+
+   
+   

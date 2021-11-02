@@ -254,7 +254,47 @@
 
 
 
-   
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Come extra alleghiamo una descrizione delle attività svolte finora dal nostro gruppo. I task relativi all'Homework figurano come svolti collettivamente in quanto abbiamo avuto la possibilità di lavorare fisicamente insieme per un totale di  25 ore.
+
+<img src="/Users/mattiazingaretti/Library/Application Support/typora-user-images/image-20211102110508566.png" alt="image-20211102110508566" style="zoom:60%;" />
+
+ 
+
+
+
+
+
+
 
 
 

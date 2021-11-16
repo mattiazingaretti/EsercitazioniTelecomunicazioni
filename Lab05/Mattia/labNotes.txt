@@ -1,0 +1,33 @@
+Notes on zebra/quagga
+
+RIP = routing i protocol
+OSPF = open shortest path first
+BGP = Boarder gateway protocol
+
+Differenza routing table e forwarding table.
+- Pe una stessa dest possimao avere più regole. Solo una di queste sarà operativa, 
+quella che verrà scritta nella forwarding table.
+- Quindi F.T. sottoinsieme di R.T.
+- F.T. o FIB (forwarding information board)
+- cenni alla tecnologia TCAM nei router di accesso. 
+
+##QUESTA PROCEDURA VA INSERITA IN UNO DEI FILE DI STARTUP 
+PER RENDERE PERMANENTE L'ESECUZIONE DI QUESTI COMANDI
+
+Per avviare zebta andare su 
+/etc/init.d/
+e avviare zebra
+./zebra start
+
+Di nuovo è possibile includere le varie dirs. 
+etc init.d 
+Dentro la directory associata al router su cui si sta lavorando in modo da rendere permanenti i comandi,
+
+IN questo percorso (dopo aver avviato zebra)
+/etc/quagga/
+Ci sono 3 files 
+- deamons: contiene le configurazioni sui demoni
+- debian.conf
+- zebra.conf
+
+Nel fil

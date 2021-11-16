@@ -1,0 +1,4 @@
+ifconfig eth0 100.0.0.1 netmask 255.255.255.0
+ifconfig eth1 150.0.0.1 netmask 255.255.255.252
+
+#Omettiamo le istruioni route allo startup in modo da utilizzare zebra che configurerà lui queste regole

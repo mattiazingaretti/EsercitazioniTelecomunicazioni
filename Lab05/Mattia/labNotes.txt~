@@ -1,0 +1,13 @@
+Notes on zebra/quagga
+
+RIP = routing i protocol
+OSPF = open shortest path first
+BGP = Boarder gateway protocol
+
+Differenza routing table e forwarding table.
+- Pe una stessa dest possimao avere più regole. Solo una di queste sarà operativa, 
+quella che verrà scritta nella forwarding table.
+- Quindi F.T. sottoinsieme di R.T.
+- F.T. o FIB (forwarding information board)
+- cenni alla tecnologia TCAM nei router di accesso. 
+

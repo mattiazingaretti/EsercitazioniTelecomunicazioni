@@ -9,7 +9,7 @@
   <img src="/Users/mattiazingaretti/Library/Application Support/typora-user-images/image-20211102103311698.png" alt="image-20211102103311698" style="zoom:28%;" />
 </div>
 
-1. Si dispone di un insieme di indirizzi con netmask a 22 bit; sapendo che un blocco di indirizzi di classe C ha netmask a 24 bit abbiamo impiegato i due bit rimanenti (bit di supernetting) per individuare i 4 blocchi di indirizzi di classe C corrispondenti [198.10.96.X/24 , 198.10.97.X/24 , 198.10.98.X/24 , 198.10.99.X/24 ], ottenuti rispettivamente impostando i penultimi due bit del 3° ottetto con le configurazioni [00 , 01, 10 , 11].
+1. Si dispone di un insieme di indirizzi con netmask a 22 bit; sapendo che un blocco di indirizzi di classe C ha netmask a 24 bit abbiamo impiegato i due bit rimanenti (bit di supernetting) per individuare i 4 blocchi di indirizzi di classe C corrispondenti [198.10.96.X/24 , 198.10.97.X/24 , 198.10.98.X/24 , 198.10.99.X/24 ], ottenutmi rispettivamente impostando i penultimi due bit del 3° ottetto con le configurazioni [00 , 01, 10 , 11].
    Con l'idea di effettuare SuperNetting su questi blocchi abbiamo realizzato l'assegnazione dei prefissi alle varie LAN applicando la tecnica di subnetting. 
    Il conteggio degli indirizzi non utilizzati non comprende gli indirizzi broadcast e il prefisso di rete.
    
@@ -44,7 +44,6 @@
    <div align="center">
    <img src="/Users/mattiazingaretti/Library/Application Support/typora-user-images/image-20211101205557201.png" alt="image-20211101205557201" style="zoom:18%;" align="center"/>
    </div>
-   
    
    
 2. Otteniamo le seguenti tabelle eseguendo in ogni router il comando:

@@ -1,0 +1,10 @@
+ramo sinistra ospf
+ramo destra rip
+
+router in senso orario la prima che trovo sarà l'interfaccia 0 poi 1 poi 2 ecc.
+
+L'indirizzo più basso al router con identificativo più basso. (r1 , r2 , r3 , ...)
+
+Backbone triangolare con routing statico (lan M , Lan L , lan I ) rilancia tramite r2 due static route 1 per internet e una per 
+il prefisso della sottorete di destra rip. E viceversa.
+  

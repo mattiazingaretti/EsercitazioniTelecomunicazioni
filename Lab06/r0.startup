@@ -1,0 +1,11 @@
+ifconfig eth0 10.3.0.13 netmask 255.255.255.252 
+ifconfig eth1 10.3.0.9 netmask 255.255.255.252
+ifconfig eth2 10.3.0.5 netmask 255.255.255.252
+
+#Enable quagga-zebra daemons
+/etc/init.d/zebra start
+
+#Kernel routes configured statically
+route add default gw 10.3.0.14
+
+

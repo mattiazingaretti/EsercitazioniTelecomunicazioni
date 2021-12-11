@@ -1,1 +1,0 @@
-prova in cui funziona tutto ma passando per la strada più lunga. utilizziamo redistribute rip e redistribute ospf.
